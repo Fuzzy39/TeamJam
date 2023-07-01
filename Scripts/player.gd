@@ -13,6 +13,7 @@ func _physics_process(delta):
 	#animations
 	if input_direction == Vector2.ZERO:
 		moving = false
+		await $Sprite.animation_looped
 		$Sprite.play("idle")
 	else:
 		$Sprite.play("moving")

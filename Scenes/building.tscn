@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://4fk00lknnwkk"]
+[gd_scene load_steps=6 format=3 uid="uid://4fk00lknnwkk"]
 
 [ext_resource type="Script" path="res://Scripts/building.gd" id="1_nkvah"]
 [ext_resource type="Texture2D" uid="uid://dgc6pf2p24vvt" path="res://art/shrine off.png" id="2_b2xsk"]
@@ -23,11 +23,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng7df"]
-size = Vector2(62, 36)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djk7y"]
-size = Vector2(84, 45)
+size = Vector2(76, 49)
 
 [node name="Building" type="StaticBody2D"]
 position = Vector2(85, 90)
@@ -37,15 +34,15 @@ script = ExtResource("1_nkvah")
 position = Vector2(1, -13)
 sprite_frames = SubResource("SpriteFrames_gr3ay")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_ng7df")
+polygon = PackedVector2Array(-31, 18, 31, 17, 30, 11, 0, -18, -20, -18)
 
 [node name="Proximity" type="Area2D" parent="."]
 position = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Proximity"]
-position = Vector2(0, 4.5)
+position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_djk7y")
 
 [connection signal="body_entered" from="Proximity" to="." method="_on_proximity_body_entered"]
