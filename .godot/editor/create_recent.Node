@@ -1,3 +1,7 @@
+Label
+VBoxContainer
+PanelContainer
+Control
 TileMap
 Node2D
 CanvasGroup
