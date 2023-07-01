@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://besq7qgsfsslv"]
+[gd_scene load_steps=5 format=3 uid="uid://besq7qgsfsslv"]
 
 [ext_resource type="PackedScene" uid="uid://bmhyhsixugfo" path="res://player.tscn" id="1_pa26x"]
 [ext_resource type="PackedScene" uid="uid://77tgh2eswlxq" path="res://world.tscn" id="2_dwvlx"]
 [ext_resource type="PackedScene" uid="uid://l7p8h44waxb2" path="res://gui.tscn" id="3_nfun1"]
+[ext_resource type="PackedScene" uid="uid://cmnlrsa730v0p" path="res://gold_piece.tscn" id="4_neg8d"]
 
 [node name="Main" type="Node"]
 
-[node name="Player" parent="." instance=ExtResource("1_pa26x")]
-
 [node name="World" parent="." instance=ExtResource("2_dwvlx")]
 
+[node name="Player" parent="." instance=ExtResource("1_pa26x")]
+
 [node name="GUI" parent="." instance=ExtResource("3_nfun1")]
+
+[node name="Gold_Piece" parent="." instance=ExtResource("4_neg8d")]
