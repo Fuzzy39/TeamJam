@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 400
+var moving = false
 
 
 func _physics_process(delta):
@@ -11,9 +12,11 @@ func _physics_process(delta):
 	
 	#animations
 	if input_direction == Vector2.ZERO:
+		moving = false
 		$Sprite.play("idle")
 	else:
 		$Sprite.play("moving")
 
 func is_player():
 	pass
+
