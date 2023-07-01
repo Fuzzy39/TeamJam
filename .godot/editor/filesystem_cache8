@@ -1,0 +1,21 @@
+2a60927148abd1d33b818b535e306557
+::res://::1688237029
+global.gd::GDScript::-1::1688234492::0::1::::<>Node<>::
+gold_piece.gd::GDScript::-1::1688236787::0::1::::<>Area2D<>::
+gold_piece.tscn::PackedScene::5642643594174843453::1688235711::0::1::::<><>::res://gold_piece.gd<>uid://bwf53pffjwiml
+gold_spawn.gd::GDScript::-1::1688235037::0::1::::<>Timer<>::
+gui.tscn::PackedScene::839107468048459993::1688236787::0::1::::<><>::
+Main.tscn::PackedScene::2705364325575203443::1688235710::0::1::::<><>::uid://bmhyhsixugfo<>uid://77tgh2eswlxq<>uid://l7p8h44waxb2
+player.gd::GDScript::-1::1688234796::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::95429650554775264::1688235710::0::1::::<><>::res://player.gd<>uid://baxtqjsy25k73
+README.md::TextFile::-1::1688236787::0::1::::<><>::
+Upgrade.tscn::PackedScene::4840004526229964175::1688236787::0::1::::<><>::
+world.gd::GDScript::-1::1688235366::0::1::::<>Node2D<>::
+world.tscn::PackedScene::2313267831752785498::1688235711::0::1::::<><>::uid://dx2myihquhqge<>res://world.gd
+::res://art/::1688236971
+download 10.12.28 AM.png::CompressedTexture2D::3942769440326796131::1688230068::1688237032::1::::<><>::
+gold idle spritesheet.png::CompressedTexture2D::4958686146726395935::1688236971::1688237032::1::::<><>::
+Grass Tileset 1.png::CompressedTexture2D::6043136662408633222::1688235425::1688237032::1::::<><>::
+icon.svg::CompressedTexture2D::2435084069245870884::1688221790::1688237032::1::::<><>::
+image.png::CompressedTexture2D::6503939036972871948::1688227229::1688237032::1::::<><>::
+stopper.png::CompressedTexture2D::8830115548834996424::1688227207::1688237032::1::::<><>::
