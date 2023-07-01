@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://4fk00lknnwkk"]
 
-[ext_resource type="Texture2D" uid="uid://baxtqjsy25k73" path="res://art/icon.svg" id="1_0ihl8"]
 [ext_resource type="Script" path="res://Scenes/building.gd" id="1_67t2a"]
-[ext_resource type="Texture2D" uid="uid://bwf53pffjwiml" path="res://art/download 10.12.28 AM.png" id="3_jnqm1"]
+[ext_resource type="Texture2D" uid="uid://dgc6pf2p24vvt" path="res://art/shrine off.png" id="2_b2xsk"]
+[ext_resource type="Texture2D" uid="uid://hosgptdc05qe" path="res://art/shrine on.png" id="3_2u4xy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gr3ay"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0ihl8")
+"texture": ExtResource("2_b2xsk")
 }],
 "loop": true,
 "name": &"default",
@@ -16,7 +16,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_jnqm1")
+"texture": ExtResource("3_2u4xy")
 }],
 "loop": true,
 "name": &"glowing",
@@ -24,27 +24,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ng7df"]
-size = Vector2(128, 128)
+size = Vector2(62, 36)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iolk4"]
-radius = 135.093
+radius = 88.0227
 
 [node name="Building" type="StaticBody2D"]
+position = Vector2(85, 90)
 script = ExtResource("1_67t2a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(187, 165)
+position = Vector2(1, -13)
 sprite_frames = SubResource("SpriteFrames_gr3ay")
 animation = &"glowing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(187, 165)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ng7df")
 
 [node name="Proximity" type="Area2D" parent="."]
+position = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Proximity"]
-position = Vector2(187, 165)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_iolk4")
 
 [connection signal="body_entered" from="Proximity" to="." method="_on_proximity_body_entered"]

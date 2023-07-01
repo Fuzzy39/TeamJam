@@ -29,6 +29,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="Altar" parent="." instance=ExtResource("3_qwrtd")]
-position = Vector2(273, -120)
+position = Vector2(313, 38)
+scale = Vector2(2, 2)
 
 [connection signal="timeout" from="Gold_Spawn" to="." method="_on_gold_spawn_timeout"]
