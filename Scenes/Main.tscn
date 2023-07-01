@@ -8,53 +8,49 @@
 [sub_resource type="LabelSettings" id="LabelSettings_lx51u"]
 font_size = 24
 
-[node name="Main" type="Control"]
-layout_mode = 3
+[node name="Main" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1152.0
-offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 649.0
-
-[node name="SubViewport" type="SubViewportContainer" parent="HBoxContainer"]
+[node name="SubViewport" type="SubViewportContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewport"]
+[node name="SubViewport" type="SubViewport" parent="SubViewport"]
+disable_3d = true
 handle_input_locally = false
-size = Vector2i(979, 649)
+canvas_item_default_texture_filter = 0
+size = Vector2i(979, 648)
+size_2d_override = Vector2i(384, 256)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="World" parent="HBoxContainer/SubViewport/SubViewport" instance=ExtResource("2_dwvlx")]
+[node name="World" parent="SubViewport/SubViewport" instance=ExtResource("2_dwvlx")]
 
-[node name="Player" parent="HBoxContainer/SubViewport/SubViewport" instance=ExtResource("1_pa26x")]
+[node name="Player" parent="SubViewport/SubViewport" instance=ExtResource("1_pa26x")]
 
-[node name="GUI" type="PanelContainer" parent="HBoxContainer"]
+[node name="GUI" type="PanelContainer" parent="."]
 layout_mode = 2
 script = ExtResource("3_jf74d")
 
-[node name="Container" type="VBoxContainer" parent="HBoxContainer/GUI"]
+[node name="Container" type="VBoxContainer" parent="GUI"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/GUI/Container"]
+[node name="Label" type="Label" parent="GUI/Container"]
 layout_mode = 2
 text = "This is the UI!"
 label_settings = SubResource("LabelSettings_lx51u")
 horizontal_alignment = 1
 
-[node name="GoldCount" type="Label" parent="HBoxContainer/GUI/Container"]
+[node name="GoldCount" type="Label" parent="GUI/Container"]
 layout_mode = 2
 text = "Gold: number go here"
 script = ExtResource("4_myk4m")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/GUI/Container"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/Container"]
 layout_mode = 2
