@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvxif0p1jfo14"]
+[gd_scene load_steps=4 format=3 uid="uid://d325rsjhpob4p"]
 
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="1_882t7"]
 [ext_resource type="Script" path="res://Scripts/GoldCount.gd" id="1_b5lxf"]
