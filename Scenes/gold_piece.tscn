@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmnlrsa730v0p"]
+
+[ext_resource type="Script" path="res://Scripts/gold_piece.gd" id="1_cslnv"]
+[ext_resource type="Texture2D" uid="uid://bwf53pffjwiml" path="res://art/download 10.12.28 AM.png" id="2_jhr4f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_84hpj"]
+radius = 7.0
+
+[node name="Gold_Piece" type="Area2D"]
+script = ExtResource("1_cslnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(79, 70)
+scale = Vector2(0.10084, 0.10084)
+texture = ExtResource("2_jhr4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(79, 70)
+shape = SubResource("CircleShape2D_84hpj")
+
+[node name="Bounce_Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Bounce_Timer" to="." method="_on_bounce_timer_timeout"]
