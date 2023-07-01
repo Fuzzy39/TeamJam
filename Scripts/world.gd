@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var gold = preload("res://gold_piece.tscn")
+var gold = preload("res://Scenes/gold_piece.tscn")
 
 
 func _on_gold_spawn_timeout():
