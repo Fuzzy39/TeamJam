@@ -11,8 +11,8 @@ var bounce_velocity = original_velocity
 var original_y
 
 func _ready():#go to original position
-	original_y = randi_range(10, 100)
-	position = Vector2(randi_range(10, 100), original_y)
+	original_y = randi_range(0, 648)
+	position = Vector2(randi_range(0, 1152), original_y)
 	$Bounce_Timer.start()
 
 func _process(delta):
