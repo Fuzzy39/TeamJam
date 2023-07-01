@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-var spinny_speed = 100
+@export var speed = 400
 
-func _process(delta):
-	
-	if Input.is_action_pressed("spin_left"):
-		rotation_degrees -= spinny_speed * delta
-	if Input.is_action_pressed("spin_right"):
-		rotation_degrees += spinny_speed * delta
+func get_input():
+	var input_direction = Input.get_vector("left", "right", "up", "down")
+	velocity = input_direction * speed
+
+func _physics_process(delta):
+	get_input()
+	move_and_slide()
