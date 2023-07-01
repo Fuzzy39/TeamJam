@@ -2,8 +2,14 @@ extends Node2D
 
 
 var gold = preload("res://Scenes/gold_piece.tscn")
+var gold_due:float = 0;
 
 
-func _on_gold_spawn_timeout():
-	var new_gold = gold.instantiate()
-	add_child(new_gold)
+# delta is in seconds.
+func _process(delta):
+	gold_due += delta*Global.gold_spawned_per_sec;
+	while(gold_due>1):
+		var piece = gold.instantiate();
+		add_child(piece);
+		gold_due-=1;
+	

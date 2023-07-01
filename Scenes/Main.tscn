@@ -51,6 +51,3 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Gold: number go here"
 script = ExtResource("4_myk4m")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GUI/Container"]
-layout_mode = 2

@@ -10,12 +10,10 @@ radius = 7.0
 script = ExtResource("1_cslnv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(79, 70)
 scale = Vector2(0.10084, 0.10084)
 texture = ExtResource("2_jhr4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(79, 70)
 shape = SubResource("CircleShape2D_84hpj")
 
 [node name="Bounce_Timer" type="Timer" parent="."]
