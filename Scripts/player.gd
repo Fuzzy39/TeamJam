@@ -2,18 +2,18 @@ extends CharacterBody2D
 
 @export var speed = 400
 
-func get_input():
+
+func _physics_process(delta):
+	#movment
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
+	move_and_slide()
 	
+	#animations
 	if input_direction == Vector2.ZERO:
 		$Sprite.play("idle")
 	else:
-		$Sprite.stop()
-
-func _physics_process(delta):
-	get_input()
-	move_and_slide()
+		$Sprite.play("moving")
 
 func is_player():
 	pass
