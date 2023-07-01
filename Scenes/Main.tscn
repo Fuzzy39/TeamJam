@@ -4,10 +4,30 @@
 [ext_resource type="PackedScene" uid="uid://77tgh2eswlxq" path="res://Scenes/world.tscn" id="2_dwvlx"]
 [ext_resource type="PackedScene" uid="uid://l7p8h44waxb2" path="res://Scenes/gui.tscn" id="3_nfun1"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="World" parent="." instance=ExtResource("2_dwvlx")]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 649.0
 
-[node name="Player" parent="." instance=ExtResource("1_pa26x")]
+[node name="SubViewport" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+stretch = true
 
-[node name="GUI" parent="." instance=ExtResource("3_nfun1")]
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewport"]
+handle_input_locally = false
+size = Vector2i(918, 649)
+render_target_update_mode = 4
+
+[node name="World" parent="HBoxContainer/SubViewport/SubViewport" instance=ExtResource("2_dwvlx")]
+
+[node name="Player" parent="HBoxContainer/SubViewport/SubViewport" instance=ExtResource("1_pa26x")]
+
+[node name="GUI" parent="HBoxContainer" instance=ExtResource("3_nfun1")]
+layout_mode = 2
+size_flags_horizontal = 3

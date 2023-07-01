@@ -5,29 +5,21 @@
 [sub_resource type="LabelSettings" id="LabelSettings_svudw"]
 font_size = 24
 
-[node name="GUI" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="GUI" type="PanelContainer"]
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_left = 846.0
-offset_right = 1152.0
-offset_bottom = 648.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "This is the UI!"
 label_settings = SubResource("LabelSettings_svudw")
 horizontal_alignment = 1
 
-[node name="GoldCount" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="GoldCount" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Gold: number go here"
 script = ExtResource("1_b5lxf")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
