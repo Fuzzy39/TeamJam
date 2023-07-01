@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duwthdypm1pqn"
-path="res://.godot/imported/gold move spritesheet.png-5c78af83af63643cb3106832db4ebd97.ctex"
+uid="uid://bevtjswll406f"
+path="res://.godot/imported/gold move 2 spritesheet.png-735af5d1584a7ccc180f2c754f68314e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/gold move spritesheet.png"
-dest_files=["res://.godot/imported/gold move spritesheet.png-5c78af83af63643cb3106832db4ebd97.ctex"]
+source_file="res://art/gold move 2 spritesheet.png"
+dest_files=["res://.godot/imported/gold move 2 spritesheet.png-735af5d1584a7ccc180f2c754f68314e.ctex"]
 
 [params]
 
