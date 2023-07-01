@@ -1,5 +1,7 @@
 Label
 VBoxContainer
+Button
+HBoxContainer
 PanelContainer
 Control
 TileMap

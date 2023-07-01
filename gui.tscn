@@ -21,3 +21,15 @@ layout_mode = 2
 text = "This is the UI!"
 label_settings = SubResource("LabelSettings_svudw")
 horizontal_alignment = 1
+
+[node name="GoldCount" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gold: number go here"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mine gold"
