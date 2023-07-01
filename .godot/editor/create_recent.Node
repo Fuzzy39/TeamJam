@@ -1,5 +1,6 @@
-CanvasGroup
 TileMap
+Node2D
+CanvasGroup
 Node
 CollisionShape2D
 Sprite2D
