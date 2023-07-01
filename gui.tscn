@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://l7p8h44waxb2"]
+[gd_scene load_steps=2 format=3 uid="uid://l7p8h44waxb2"]
 
-[node name="GUI" type="CanvasGroup"]
+[sub_resource type="LabelSettings" id="LabelSettings_svudw"]
+font_size = 24
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 846.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is the UI!"
+label_settings = SubResource("LabelSettings_svudw")
+horizontal_alignment = 1
+
+[node name="GoldCount" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gold: number go here"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mine gold"
