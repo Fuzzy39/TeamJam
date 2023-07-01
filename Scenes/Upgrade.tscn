@@ -1,44 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://ca7sfxsaxgu2j"]
+[gd_scene load_steps=3 format=3 uid="uid://ca7sfxsaxgu2j"]
+
+[ext_resource type="Script" path="res://Scripts/Upgrade.gd" id="1_hiirn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_exwgn"]
 font_size = 20
 
-[node name="Upgrade" type="Control"]
-layout_mode = 3
+[node name="Upgrade" type="VBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -755.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hiirn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Name" type="Label" parent="VBoxContainer"]
+[node name="Name" type="Label" parent="."]
 layout_mode = 2
 text = "Control Name"
 label_settings = SubResource("LabelSettings_exwgn")
 
-[node name="Description" type="Label" parent="VBoxContainer"]
+[node name="Description" type="Label" parent="."]
 layout_mode = 2
 text = "Lorem ipsum sit amet, cucumber body alureing eit."
+autowrap_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Cost" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Cost" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Cost: YOUR SOUL"
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Owned" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Effect: YOUR DOOM
-"
+text = "Owned: X"
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="."]
 layout_mode = 2
 text = "Purchase"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

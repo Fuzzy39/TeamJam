@@ -2,11 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://bmhyhsixugfo" path="res://Scenes/player.tscn" id="1_pa26x"]
 [ext_resource type="PackedScene" uid="uid://77tgh2eswlxq" path="res://Scenes/world.tscn" id="2_dwvlx"]
-[ext_resource type="PackedScene" uid="uid://l7p8h44waxb2" path="res://Scenes/gui.tscn" id="3_nfun1"]
+[ext_resource type="PackedScene" uid="uid://bvxif0p1jfo14" path="res://Scenes/gui.tscn" id="3_nfun1"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
