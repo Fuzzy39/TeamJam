@@ -19,10 +19,6 @@ config/icon="res://art/icon.svg"
 
 Global="*res://global.gd"
 
-[display]
-
-window/stretch/scale=3.0
-
 [dotnet]
 
 project/assembly_name="TeamsJam"
