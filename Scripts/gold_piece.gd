@@ -13,7 +13,7 @@ var original_y
 func _ready():#go to original position
 	original_y = randi_range(0, 648)
 	position = Vector2(randi_range(0, 1152), original_y)
-	$Bounce_Timer.start()
+	#$Bounce_Timer.start()
 
 func _process(delta):
 	

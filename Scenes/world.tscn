@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://77tgh2eswlxq"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_qyn60"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_vnhc0"]
 [ext_resource type="Texture2D" uid="uid://csdltwcoxw6qk" path="res://art/Grass Tileset 1.png" id="2_fbqp8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hj2k1"]
@@ -16,7 +16,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_hj2k1")
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_qyn60")
+script = ExtResource("1_vnhc0")
 
 [node name="Home" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5lvt8")
