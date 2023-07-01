@@ -6,3 +6,7 @@ res://area_2d.gd
 res://area_2d.tscn
 res://gold_piece.tscn
 res://gold_piece.gd
+res://global.gd
+res://player.gd
+res://CoinSpawn.gd
+res://world.gd

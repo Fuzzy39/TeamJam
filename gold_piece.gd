@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var value = 1
+
 @export var original_velocity = -50
 @export var bounce_acceleration = 50
 
@@ -9,8 +11,8 @@ var bounce_velocity = original_velocity
 var original_y
 
 func _ready():#go to original position
-	original_y = randi_range(20, 550)
-	position = Vector2(randi_range(20, 1130), original_y)
+	original_y = randi_range(10, 100)
+	position = Vector2(randi_range(10, 100), original_y)
 	$Bounce_Timer.start()
 
 func _process(delta):
@@ -31,3 +33,11 @@ func _on_bounce_timer_timeout():#start bouncing and set a new wait time for late
 	bouncing = true
 	$Bounce_Timer.wait_time = randi_range(5, 10)
 	print("boing")
+
+
+
+
+func _on_body_entered(body):
+	if body.has_method("is_player"):
+		Global.player_gold += value
+		queue_free()
