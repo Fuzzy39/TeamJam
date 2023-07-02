@@ -3,6 +3,7 @@ extends PanelContainer
 var Upgrade = preload("res://Scenes/Upgrade.tscn")
 var upSpawn;
 var upSpeed;
+var upWork;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,11 +22,18 @@ func _ready():
 	connect_Building(upSpawn,  $"../SubViewport/SubViewport/World/Altar");
 	
 	# create speed upgrade
-	upSpeed =  create_Upgrade("Gild My Boots!", "Pay some coin to get some pep in your step.");
+	upSpeed =  create_Upgrade("Gild My Boots!", "Pay some coin to get some pep in you and your worker's steps.");
 	upSpeed.baseCost = 20; # change these before calling connect_upgrade to ensure the label remains correct.
 	upSpeed.exponent = 1.5;
 	connect_Upgrade(upSpeed, on_upSpeed_purchased, set_upSpeed_Effect);
 	connect_Building(upSpeed, $"../SubViewport/SubViewport/World/SpeedUp");
+	
+	# create speed upgrade
+	upWork =  create_Upgrade("Forge a friend!", "Have the smithy forge your gold into a new soul who will mine gold from underground.");
+	upWork.baseCost = 30; # change these before calling connect_upgrade to ensure the label remains correct.
+	upWork.exponent = 1.2;
+	connect_Upgrade(upWork, on_upWork_purchased, set_upWork_Effect);
+	connect_Building(upWork, $"../SubViewport/SubViewport/World/Forge");
 	
 
 
@@ -49,11 +57,14 @@ func connect_Building(upgrade, building):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+var gold_due = 0;
 func _process(delta):
-	pass
+	gold_due+=delta*Global.workers*Global.worker_gps;
+	Global.player_gold +=floor(gold_due);
+	gold_due-=floor(gold_due);
 
 func on_upSpawn_purchased():
-	Global.gold_spawned_per_sec+=.4;
+	Global.gold_spawned_per_sec+=.5;
 	set_upSpawn_Effect();
 
 func set_upSpawn_Effect():
@@ -63,8 +74,16 @@ func set_upSpawn_Effect():
 func on_upSpeed_purchased():
 	var player = $"../SubViewport/SubViewport/World/Player";
 	player.speed +=25;
+	Global.worker_gps+.03;
 	set_upSpeed_Effect();
 
 func set_upSpeed_Effect():
 	var player = $"../SubViewport/SubViewport/World/Player";
-	upSpeed.get_node("Effect").set_text("Current Speed: "+("%.2f"%(player.speed/100.0)));
+	upSpeed.get_node("Effect").set_text("Current Speed: "+("%.2f"%(player.speed/100.0))+" Worker GPS: "+str(Global.worker_gps));
+	
+func on_upWork_purchased():
+	Global.passive_gold_per_sec+=1;
+	set_upWork_Effect();
+
+func set_upWork_Effect():
+	upWork.get_node("Effect").set_text(" ");

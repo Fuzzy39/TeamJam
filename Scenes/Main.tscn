@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://besq7qgsfsslv"]
+[gd_scene load_steps=6 format=3 uid="uid://besq7qgsfsslv"]
 
 [ext_resource type="PackedScene" uid="uid://77tgh2eswlxq" path="res://Scenes/world.tscn" id="2_dwvlx"]
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="3_jf74d"]
+[ext_resource type="Script" path="res://Scenes/GPS.gd" id="4_b0ugs"]
 [ext_resource type="Script" path="res://Scripts/GoldCount.gd" id="4_myk4m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lx51u"]
@@ -56,6 +57,11 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Gold: number go here"
 script = ExtResource("4_myk4m")
+
+[node name="GPS" type="Label" parent="GUI/CenterContainer/Container"]
+layout_mode = 2
+text = "Pasive Income: 9000 Gold/Sec"
+script = ExtResource("4_b0ugs")
 
 [node name="Panel" type="Panel" parent="GUI/CenterContainer/Container"]
 custom_minimum_size = Vector2(0, 10)

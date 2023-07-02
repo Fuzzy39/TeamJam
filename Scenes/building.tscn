@@ -1,45 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://4fk00lknnwkk"]
+[gd_scene load_steps=4 format=3 uid="uid://4fk00lknnwkk"]
 
 [ext_resource type="Script" path="res://Scripts/building.gd" id="1_nkvah"]
-[ext_resource type="Texture2D" uid="uid://dgc6pf2p24vvt" path="res://art/shrine off.png" id="2_b2xsk"]
-[ext_resource type="Texture2D" uid="uid://hosgptdc05qe" path="res://art/shrine on.png" id="3_2u4xy"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gr3ay"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_b2xsk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_2u4xy")
-}],
-"loop": true,
-"name": &"glowing",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjhim"]
+size = Vector2(60, 37)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aetar"]
 radius = 40.6971
 
 [node name="Building" type="StaticBody2D"]
-position = Vector2(85, 90)
+position = Vector2(77, 90)
 script = ExtResource("1_nkvah")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -13)
-sprite_frames = SubResource("SpriteFrames_gr3ay")
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0, -1)
-polygon = PackedVector2Array(-31, 18, 31, 17, 30, 11, 0, -18, -20, -18)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yjhim")
 
 [node name="Proximity" type="Area2D" parent="."]
-position = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Proximity"]
 position = Vector2(-1, 4.5)

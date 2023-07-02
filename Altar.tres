@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bu21nkcn4ga0j"]
+
+[ext_resource type="Texture2D" uid="uid://dgc6pf2p24vvt" path="res://art/shrine off.png" id="1_s1q7x"]
+[ext_resource type="Texture2D" uid="uid://hosgptdc05qe" path="res://art/shrine on.png" id="2_dhrvr"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s1q7x")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dhrvr")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
