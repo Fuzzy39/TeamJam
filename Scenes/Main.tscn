@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://besq7qgsfsslv"]
+[gd_scene load_steps=5 format=3 uid="uid://besq7qgsfsslv"]
 
-[ext_resource type="PackedScene" uid="uid://bmhyhsixugfo" path="res://Scenes/player.tscn" id="1_pa26x"]
 [ext_resource type="PackedScene" uid="uid://77tgh2eswlxq" path="res://Scenes/world.tscn" id="2_dwvlx"]
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="3_jf74d"]
 [ext_resource type="Script" path="res://Scripts/GoldCount.gd" id="4_myk4m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lx51u"]
-font_size = 24
+font_size = 20
 
 [node name="Main" type="HBoxContainer"]
 anchors_preset = 15
@@ -18,36 +17,46 @@ grow_vertical = 2
 [node name="SubViewport" type="SubViewportContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 4.0
+size_flags_stretch_ratio = 3.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewport"]
 disable_3d = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(979, 648)
-size_2d_override = Vector2i(384, 256)
+size = Vector2i(861, 648)
+size_2d_override = Vector2i(576, 384)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="World" parent="SubViewport/SubViewport" instance=ExtResource("2_dwvlx")]
 
-[node name="Player" parent="SubViewport/SubViewport" instance=ExtResource("1_pa26x")]
-
 [node name="GUI" type="PanelContainer" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
 script = ExtResource("3_jf74d")
 
-[node name="Container" type="VBoxContainer" parent="GUI"]
+[node name="CenterContainer" type="MarginContainer" parent="GUI"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GUI/Container"]
+[node name="Container" type="VBoxContainer" parent="GUI/CenterContainer"]
 layout_mode = 2
-text = "This is the UI!"
+
+[node name="Panel2" type="Panel" parent="GUI/CenterContainer/Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GUI/CenterContainer/Container"]
+layout_mode = 2
+text = "Resources"
 label_settings = SubResource("LabelSettings_lx51u")
 horizontal_alignment = 1
 
-[node name="GoldCount" type="Label" parent="GUI/Container"]
+[node name="GoldCount" type="Label" parent="GUI/CenterContainer/Container"]
 layout_mode = 2
 text = "Gold: number go here"
 script = ExtResource("4_myk4m")
+
+[node name="Panel" type="Panel" parent="GUI/CenterContainer/Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2

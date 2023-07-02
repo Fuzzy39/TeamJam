@@ -18,6 +18,7 @@ script = ExtResource("1_hiirn")
 layout_mode = 2
 text = "Control Name"
 label_settings = SubResource("LabelSettings_exwgn")
+horizontal_alignment = 1
 
 [node name="Description" type="Label" parent="."]
 layout_mode = 2
