@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca7sfxsaxgu2j"]
+[gd_scene load_steps=4 format=3 uid="uid://ca7sfxsaxgu2j"]
 
 [ext_resource type="Script" path="res://Scripts/Upgrade.gd" id="1_hiirn"]
+[ext_resource type="LabelSettings" uid="uid://dybcfexkbbop3" path="res://UpgradeBody.tres" id="2_ldlk6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_exwgn"]
 font_size = 20
@@ -23,6 +24,7 @@ horizontal_alignment = 1
 [node name="Description" type="Label" parent="."]
 layout_mode = 2
 text = "Lorem ipsum sit amet, cucumber body alureing eit."
+label_settings = ExtResource("2_ldlk6")
 autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -32,15 +34,18 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Cost: YOUR SOUL"
+label_settings = ExtResource("2_ldlk6")
 
 [node name="Owned" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Owned: X"
+label_settings = ExtResource("2_ldlk6")
 
 [node name="Effect" type="Label" parent="."]
 layout_mode = 2
 text = "Current Effect: X"
+label_settings = ExtResource("2_ldlk6")
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]

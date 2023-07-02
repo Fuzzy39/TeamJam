@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_vnhc0"]
 [ext_resource type="Texture2D" uid="uid://csdltwcoxw6qk" path="res://art/Grass Tileset 1.png" id="2_fbqp8"]
 [ext_resource type="PackedScene" uid="uid://bmhyhsixugfo" path="res://Scenes/player.tscn" id="3_2w0vj"]
-[ext_resource type="PackedScene" path="res://Scenes/building.tscn" id="3_qwrtd"]
+[ext_resource type="PackedScene" uid="uid://4fk00lknnwkk" path="res://Scenes/building.tscn" id="3_qwrtd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hj2k1"]
 texture = ExtResource("2_fbqp8")
@@ -27,6 +27,14 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608,
 
 [node name="Altar" parent="." instance=ExtResource("3_qwrtd")]
 position = Vector2(298, 29)
+scale = Vector2(1.5, 1.5)
+
+[node name="Forge" parent="." instance=ExtResource("3_qwrtd")]
+position = Vector2(-80, -596)
+scale = Vector2(1.5, 1.5)
+
+[node name="SpeedUp" parent="." instance=ExtResource("3_qwrtd")]
+position = Vector2(850, -597)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("3_2w0vj")]

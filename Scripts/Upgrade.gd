@@ -39,5 +39,11 @@ func update_labels():
 func _on_button_pressed():
 	purchase();
 
+func on_Enter():
+	self.visible = true;
+
+func on_Exit():
+	self.visible = false;
+
 
 
