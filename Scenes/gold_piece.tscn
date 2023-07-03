@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmnlrsa730v0p"]
+[gd_scene load_steps=5 format=3 uid="uid://cmnlrsa730v0p"]
 
 [ext_resource type="Script" path="res://Scripts/gold_piece.gd" id="1_cslnv"]
 [ext_resource type="Texture2D" uid="uid://be7iap7d0ra0u" path="res://art/gold collect.png" id="2_8on2v"]
+[ext_resource type="Texture2D" uid="uid://rim6a6re2hkm" path="res://art/drop shadow.png" id="2_jh0h5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_84hpj"]
 radius = 7.0
@@ -9,6 +10,11 @@ radius = 7.0
 [node name="Gold_Piece" type="Area2D"]
 z_index = -1
 script = ExtResource("1_cslnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.25, -1.75)
+scale = Vector2(0.484375, 0.484375)
+texture = ExtResource("2_jh0h5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_84hpj")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://bmhyhsixugfo"]
+[gd_scene load_steps=29 format=3 uid="uid://bmhyhsixugfo"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_5j727"]
+[ext_resource type="Texture2D" uid="uid://rim6a6re2hkm" path="res://art/drop shadow.png" id="2_fjcai"]
 [ext_resource type="Texture2D" uid="uid://djv4hquvebfps" path="res://art/gold idle tall spritesheet.png" id="2_hek44"]
 [ext_resource type="Texture2D" uid="uid://bjgjwgqdsihty" path="res://art/gold move 2 spritesheet.png" id="3_i2rh2"]
 
@@ -177,6 +178,11 @@ size = Vector2(18, 18)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_5j727")
 speed = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.96046e-08, 5.96046e-08)
+scale = Vector2(0.710937, 0.710937)
+texture = ExtResource("2_fjcai")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
