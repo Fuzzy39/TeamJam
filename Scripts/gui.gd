@@ -74,7 +74,7 @@ func set_upSpawn_Effect():
 func on_upSpeed_purchased():
 	var player = $"../SubViewport/SubViewport/World/Player";
 	player.speed +=25;
-	Global.worker_gps+.03;
+	Global.worker_gps+=.3;
 	set_upSpeed_Effect();
 
 func set_upSpeed_Effect():
@@ -82,7 +82,7 @@ func set_upSpeed_Effect():
 	upSpeed.get_node("Effect").set_text("Current Speed: "+("%.2f"%(player.speed/100.0))+" Worker GPS: "+str(Global.worker_gps));
 	
 func on_upWork_purchased():
-	Global.passive_gold_per_sec+=1;
+	Global.workers+=1;
 	set_upWork_Effect();
 
 func set_upWork_Effect():
