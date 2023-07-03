@@ -4,6 +4,7 @@ var Upgrade = preload("res://Scenes/Upgrade.tscn")
 var upSpawn;
 var upSpeed;
 var upWork;
+var door;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,25 +18,29 @@ func _ready():
 	
 	
 	# create altar upgrade:
-	upSpawn = create_Upgrade("Sacrifice", "Give offerings at the altar to increase the chances of finding shinies.");
+	upSpawn = create_Upgrade("Sacrifice!", "Give offerings at the altar to increase the chances of finding shinies.");
 	connect_Upgrade(upSpawn, on_upSpawn_purchased, set_upSpawn_Effect);
 	connect_Building(upSpawn,  $"../SubViewport/SubViewport/World/Altar");
 	
 	# create speed upgrade
-	upSpeed =  create_Upgrade("Gild My Boots!", "Pay some coin to get some pep in you and your worker's steps.");
+	upSpeed =  create_Upgrade("Oil Me Up!", "Pay some coin to get some pep in you and your worker's steps.");
 	upSpeed.baseCost = 20; # change these before calling connect_upgrade to ensure the label remains correct.
 	upSpeed.exponent = 1.5;
 	connect_Upgrade(upSpeed, on_upSpeed_purchased, set_upSpeed_Effect);
 	connect_Building(upSpeed, $"../SubViewport/SubViewport/World/SpeedUp");
 	
 	# create speed upgrade
-	upWork =  create_Upgrade("Forge a friend!", "Have the smithy forge your gold into a new soul who will mine gold from underground.");
+	upWork =  create_Upgrade("Forge a Friend!", "Hire amongst the disenfranchised somebody who will help you mine gold");
 	upWork.baseCost = 30; # change these before calling connect_upgrade to ensure the label remains correct.
 	upWork.exponent = 1.2;
 	connect_Upgrade(upWork, on_upWork_purchased, set_upWork_Effect);
 	connect_Building(upWork, $"../SubViewport/SubViewport/World/Forge");
 	
-
+	
+	door = create_Upgrade("Unlock Your Destiny!", "It's calling. For a small toll, you can answer.");
+	door.baseCost = 2500;
+	connect_Upgrade(door, on_door_purchased, set_door_effect);
+	connect_Building(door, $"../SubViewport/SubViewport/World/Door");
 
 func create_Upgrade(name:String, desc:String):
 	var up = Upgrade.instantiate();
@@ -80,10 +85,16 @@ func on_upSpeed_purchased():
 func set_upSpeed_Effect():
 	var player = $"../SubViewport/SubViewport/World/Player";
 	upSpeed.get_node("Effect").set_text("Current Speed: "+("%.2f"%(player.speed/100.0))+" Worker GPS: "+str(Global.worker_gps));
-	
+
 func on_upWork_purchased():
 	Global.workers+=1;
 	set_upWork_Effect();
+
+func on_door_purchased():
+	get_tree().change_scene_to_file("res://Scenes/end.tscn");
+
+func set_door_effect():
+	door.get_node("Effect").set_text(" ");
 
 func set_upWork_Effect():
 	upWork.get_node("Effect").set_text(" ");
