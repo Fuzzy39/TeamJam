@@ -79,7 +79,7 @@ func set_upSpawn_Effect():
 
 func on_upSpeed_purchased():
 	var player = $"../SubViewport/SubViewport/World/Player";
-	player.speed +=25;
+	player.speed +=15;
 	Global.worker_gps+=.3;
 	set_upSpeed_Effect();
 
