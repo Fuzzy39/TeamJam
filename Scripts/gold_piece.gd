@@ -2,7 +2,8 @@ extends Area2D
 
 @export var value = 1
 
-var collecting = false
+var despawning = false
+var spawning = true
 var time_alive = 0;
 
 func _ready():#go to original position
@@ -18,27 +19,39 @@ func _ready():#go to original position
 	position = map.to_global(map.map_to_local(spawnLocation))#Translates the coordinates of the tile to it's real position in the scene
 	position.x += randf_range( -16, 16 );
 	position.y += randf_range( -16, 16 );
+	
+	modulate.a = 0
 
 
 func _on_body_entered(body):
 	#jank? Yes this is jank
 	if body.has_method("is_player"):#if player, collect gold
-		Global.player_gold += value
-		collecting = true
-		$shadow.hide()
+		if !spawning:#keeps things from breaking
+			Global.player_gold += value
+			despawning = true
+			$despawn_timer.stop()
+			$shadow.hide()
 	else:
 		_ready()#what is this
 		
 
 
 func _process(delta):
-	#delete gold after 90 seconds
-	time_alive+=delta;
-	if(time_alive>=90 && !collecting):#make sure that it doesn't delete during animation
-		queue_free()
 	
-	if collecting:#animate the dissapearance
+	
+	
+	if despawning:#animate the dissapearance
 		position.y -= 10 * delta
 		modulate.a -= 2 * delta
 		if modulate.a <= 0:
 			queue_free()
+	
+	if spawning:
+		modulate.a += 1 * delta
+		if(modulate.a >= 1):
+			spawning = false
+			$despawn_timer.start()
+
+
+func _on_despawn_timer_timeout():
+	despawning = true

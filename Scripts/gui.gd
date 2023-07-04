@@ -19,6 +19,7 @@ func _ready():
 	
 	# create altar upgrade:
 	upSpawn = create_Upgrade("Sacrifice!", "Give offerings at the altar to increase the chances of finding shinies.");
+	upSpawn.exponent = 1.8
 	connect_Upgrade(upSpawn, on_upSpawn_purchased, set_upSpawn_Effect);
 	connect_Building(upSpawn,  $"../SubViewport/SubViewport/World/Altar");
 	

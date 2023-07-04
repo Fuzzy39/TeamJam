@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx5rrd3byakpg"]
+[gd_scene load_steps=5 format=3 uid="uid://cx5rrd3byakpg"]
 
 [ext_resource type="Texture2D" uid="uid://dklydb4yg2go4" path="res://art/door.png" id="1_r21ce"]
+[ext_resource type="Texture2D" uid="uid://cld55rsr5k1mc" path="res://art/bean counter.jpg" id="2_fte6a"]
+[ext_resource type="Script" path="res://Scripts/bouncy.gd" id="3_ld5kd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4wiyg"]
+font_size = 72
+font_color = Color(0.913725, 0.913725, 0, 1)
+outline_size = 9
+outline_color = Color(0.482353, 0.482353, 0, 1)
+shadow_size = 11
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="end" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -14,3 +25,18 @@ layout_mode = 0
 offset_right = 1155.0
 offset_bottom = 722.0
 texture = ExtResource("1_r21ce")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(191, 281)
+scale = Vector2(0.469697, 0.469697)
+texture = ExtResource("2_fte6a")
+script = ExtResource("3_ld5kd")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = -6.0
+offset_right = 753.0
+offset_bottom = 143.0
+text = "YOU WIN!"
+label_settings = SubResource("LabelSettings_4wiyg")
