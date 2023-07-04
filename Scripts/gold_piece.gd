@@ -2,6 +2,8 @@ extends Area2D
 
 @export var value = 1
 
+var collecting = false
+var time_alive = 0;
 
 func _ready():#go to original position
 	var map = $"../Home";
@@ -19,16 +21,24 @@ func _ready():#go to original position
 
 
 func _on_body_entered(body):
-	#jank?
-	if body.has_method("is_player"):
+	#jank? Yes this is jank
+	if body.has_method("is_player"):#if player, collect gold
 		Global.player_gold += value
-		queue_free()
+		collecting = true
+		$shadow.hide()
 	else:
-		_ready()
+		_ready()#what is this
 		
 
-var time_alive = 0;
+
 func _process(delta):
+	#delete gold after 90 seconds
 	time_alive+=delta;
-	if(time_alive>=90):
+	if(time_alive>=90 && !collecting):#make sure that it doesn't delete during animation
 		queue_free()
+	
+	if collecting:#animate the dissapearance
+		position.y -= 10 * delta
+		modulate.a -= 2 * delta
+		if modulate.a <= 0:
+			queue_free()
